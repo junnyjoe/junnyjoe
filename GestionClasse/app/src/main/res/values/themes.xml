@@ -1,8 +1,71 @@
 <resources>
     <style name="Theme.GestionClasse" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">#3F51B5</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryContainer">#DDE1FF</item>
-        <item name="colorOnPrimaryContainer">#0E1A5C</item>
+        <item name="colorPrimary">@color/terracotta</item>
+        <item name="colorOnPrimary">@color/on_terracotta</item>
+        <item name="colorPrimaryContainer">@color/terracotta_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_terracotta_container</item>
+        <item name="colorSecondary">@color/sand</item>
+        <item name="colorSecondaryContainer">@color/sand_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_sand_container</item>
+        <item name="android:colorBackground">@color/cream</item>
+        <item name="colorSurface">@color/cream</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorOnBackground">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorSurfaceContainerLowest">@color/container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/container_low</item>
+        <item name="colorSurfaceContainer">@color/container</item>
+        <item name="colorSurfaceContainerHigh">@color/container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/container_highest</item>
+        <item name="android:statusBarColor">@color/cream</item>
+        <item name="android:navigationBarColor">@color/cream</item>
+
+        <!-- Formes arrondies et fluides -->
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.Large</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+
+        <!-- Transitions entre écrans -->
+        <item name="android:windowAnimationStyle">@style/Animation.App.Activity</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+    <style name="ShapeAppearance.App.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+    </style>
+
+    <!-- Boutons : léger effet de pression (échelle 0,97) -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+    </style>
+    <style name="Widget.App.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+    </style>
+    <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+    </style>
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+    </style>
+
+    <style name="Animation.App.Activity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/screen_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/screen_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/screen_return_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/screen_return_exit</item>
     </style>
 </resources>

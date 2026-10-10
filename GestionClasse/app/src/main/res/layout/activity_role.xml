@@ -6,13 +6,25 @@
     android:orientation="vertical"
     android:padding="24dp">
 
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_hero_circle"
+        android:importantForAccessibility="no"
+        android:padding="4dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/role_title"
         android:textAppearance="?attr/textAppearanceHeadlineMedium" />
 
     <TextView
+        android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -28,7 +40,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStudent"
-        style="@style/Widget.Material3.Button.OutlinedButton"
+        style="@style/Widget.App.Button.Outlined"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginTop="12dp"

@@ -20,6 +20,13 @@
 | Listes vides / erreurs | Message explicite pour : aucun étudiant, aucun résultat de recherche, conversation vide, pièce jointe indisponible, notification refusée, échec d'enregistrement |
 | Facultatif | Recherche d'un étudiant par nom, compteur d'étudiants, suppression d'un message envoyé (appui long), mode sombre |
 
+### Style visuel et animations
+
+- Palette **terracotta** (primaire `#C65D3B`, fond crème, accents sable) avec variante sombre, définie dans `values/colors.xml` et `values-night/colors.xml`.
+- Formes arrondies (cartes 20–28 dp, champs 16 dp, bulles 22 dp), carte de classe en dégradé chaleureux.
+- Transitions entre écrans (glissement + fondu, 240–300 ms), entrée étagée des éléments et des premières lignes de liste (`Motion.java`), léger effet de pression (échelle 0,97) sur les boutons.
+- Animations courtes et jamais répétées à chaque défilement ; les durées suivent le réglage système d'animation.
+
 ## 2. Organisation de l'application
 
 ```

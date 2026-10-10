@@ -1,0 +1,23 @@
+<resources>
+    <!-- Palette terracotta (sombre) -->
+    <color name="terracotta">#FFB59F</color>
+    <color name="on_terracotta">#561E0B</color>
+    <color name="terracotta_container">#7A3418</color>
+    <color name="on_terracotta_container">#FFDBCE</color>
+    <color name="sand">#E6BEA0</color>
+    <color name="sand_container">#5A3D2A</color>
+    <color name="on_sand_container">#F9E0CC</color>
+    <color name="cream">#1F1411</color>
+    <color name="ink">#F3DFD7</color>
+    <color name="surface_variant">#4F4039</color>
+    <color name="on_surface_variant">#D8C2B8</color>
+    <color name="outline">#A08D83</color>
+    <color name="container_lowest">#190F0C</color>
+    <color name="container_low">#271B17</color>
+    <color name="container">#2C1F1A</color>
+    <color name="container_high">#372A24</color>
+    <color name="container_highest">#42342E</color>
+    <color name="hero_start">#8A3A1E</color>
+    <color name="hero_end">#B5603D</color>
+    <color name="on_hero">#FFFFFF</color>
+</resources>

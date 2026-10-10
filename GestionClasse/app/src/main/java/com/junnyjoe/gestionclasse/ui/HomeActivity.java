@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.junnyjoe.gestionclasse.R;
 import com.junnyjoe.gestionclasse.databinding.ActivityHomeBinding;
+import com.junnyjoe.gestionclasse.util.Motion;
 import com.junnyjoe.gestionclasse.util.Session;
 import com.junnyjoe.gestionclasse.viewmodel.ClasseViewModel;
 import com.junnyjoe.gestionclasse.viewmodel.EtudiantViewModel;
@@ -51,7 +52,9 @@ public class HomeActivity extends AppCompatActivity {
 
         classeVm.getClasse().observe(this, classe -> {
             boolean exists = classe != null;
+            boolean appearing = exists && b.cardClasse.getVisibility() != View.VISIBLE;
             b.cardClasse.setVisibility(exists ? View.VISIBLE : View.GONE);
+            if (appearing && savedInstanceState == null) Motion.enter(b.cardClasse);
             b.tvNoClasse.setVisibility(exists ? View.GONE : View.VISIBLE);
             b.tvNoClasse.setText(teacher ? R.string.no_classe_teacher : R.string.no_classe_student);
             if (exists) {
@@ -67,6 +70,10 @@ public class HomeActivity extends AppCompatActivity {
                 b.btnClasse.setVisibility(exists ? View.VISIBLE : View.GONE);
             }
         });
+
+        if (savedInstanceState == null) {
+            Motion.enter(b.tvWelcome, b.btnClasse, b.btnStudents, b.btnMessages);
+        }
 
         b.btnClasse.setOnClickListener(v -> startActivity(new Intent(this, ClasseActivity.class)));
         b.btnStudents.setOnClickListener(v -> startActivity(

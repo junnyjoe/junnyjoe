@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.junnyjoe.gestionclasse.R;
 import com.junnyjoe.gestionclasse.data.Etudiant;
 import com.junnyjoe.gestionclasse.databinding.ActivityEtudiantListBinding;
+import com.junnyjoe.gestionclasse.util.Motion;
 import com.junnyjoe.gestionclasse.util.Session;
 import com.junnyjoe.gestionclasse.viewmodel.EtudiantViewModel;
 
@@ -79,6 +80,7 @@ public class EtudiantListActivity extends AppCompatActivity {
         // Seul l'enseignant peut ajouter un étudiant.
         boolean canAdd = teacher && MODE_BROWSE.equals(mode);
         b.fabAdd.setVisibility(canAdd ? View.VISIBLE : View.GONE);
+        if (canAdd && savedInstanceState == null) Motion.pop(b.fabAdd);
         b.fabAdd.setOnClickListener(v -> startActivity(new Intent(this, EtudiantFormActivity.class)));
 
         b.etSearch.addTextChangedListener(new TextWatcher() {

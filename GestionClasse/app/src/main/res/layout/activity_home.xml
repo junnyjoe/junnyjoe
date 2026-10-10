@@ -20,6 +20,9 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardClasse"
             style="@style/Widget.Material3.CardView.Filled"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
@@ -28,17 +31,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_hero"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="24dp">
 
                 <TextView
                     android:id="@+id/tvClasseTitle"
+                    android:textColor="@color/on_hero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceHeadlineSmall" />
 
                 <TextView
                     android:id="@+id/tvClasseYear"
+                    android:textColor="@color/on_hero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -46,6 +52,7 @@
 
                 <TextView
                     android:id="@+id/tvClasseDesc"
+                    android:textColor="@color/on_hero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -63,7 +70,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClasse"
-            style="@style/Widget.Material3.Button.TonalButton"
+            style="@style/Widget.App.Button.Tonal"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="24dp" />

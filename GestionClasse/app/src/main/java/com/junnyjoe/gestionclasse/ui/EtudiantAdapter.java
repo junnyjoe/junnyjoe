@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.junnyjoe.gestionclasse.data.Etudiant;
 import com.junnyjoe.gestionclasse.databinding.ItemEtudiantBinding;
+import com.junnyjoe.gestionclasse.util.Motion;
 
 public class EtudiantAdapter extends ListAdapter<Etudiant, EtudiantAdapter.Holder> {
 
@@ -18,6 +19,7 @@ public class EtudiantAdapter extends ListAdapter<Etudiant, EtudiantAdapter.Holde
     }
 
     private final OnClick listener;
+    private int lastAnimated = -1;
 
     public EtudiantAdapter(OnClick listener) {
         super(new DiffUtil.ItemCallback<Etudiant>() {
@@ -48,6 +50,12 @@ public class EtudiantAdapter extends ListAdapter<Etudiant, EtudiantAdapter.Holde
         h.b.tvName.setText(e.getNomComplet());
         h.b.tvPhone.setText(e.telephone);
         h.b.getRoot().setOnClickListener(v -> listener.onClick(e));
+        Motion.reset(h.itemView);
+        // Seules les premières lignes affichées s'animent, une fois : pas d'effet à chaque défilement.
+        if (position > lastAnimated && position < 8) {
+            lastAnimated = position;
+            Motion.rise(h.itemView, position * 45L);
+        }
     }
 
     static class Holder extends RecyclerView.ViewHolder {

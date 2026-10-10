@@ -1,8 +1,0 @@
-<resources>
-    <style name="Theme.GestionClasse" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">#B9C3FF</item>
-        <item name="colorOnPrimary">#1B2A82</item>
-        <item name="colorPrimaryContainer">#2E3C99</item>
-        <item name="colorOnPrimaryContainer">#DDE1FF</item>
-    </style>
-</resources>

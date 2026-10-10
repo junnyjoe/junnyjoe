@@ -19,6 +19,7 @@ import com.junnyjoe.gestionclasse.R;
 import com.junnyjoe.gestionclasse.data.Callback;
 import com.junnyjoe.gestionclasse.data.Etudiant;
 import com.junnyjoe.gestionclasse.databinding.ActivityEtudiantDetailBinding;
+import com.junnyjoe.gestionclasse.util.Motion;
 import com.junnyjoe.gestionclasse.util.Session;
 import com.junnyjoe.gestionclasse.viewmodel.EtudiantViewModel;
 
@@ -55,6 +56,10 @@ public class EtudiantDetailActivity extends AppCompatActivity {
         b.btnDelete.setVisibility(teacherVisibility);
         boolean canMessage = session.isStudent() && meId != Session.NO_STUDENT && meId != id;
         b.btnMessage.setVisibility(canMessage ? View.VISIBLE : View.GONE);
+
+        if (savedInstanceState == null) {
+            Motion.enter(b.tvName, b.cardInfo, b.btnCall, b.btnMessage, b.btnEdit, b.btnDelete);
+        }
 
         vm = new ViewModelProvider(this).get(EtudiantViewModel.class);
         vm.getEtudiant(id).observe(this, e -> {

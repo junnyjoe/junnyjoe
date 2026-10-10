@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.junnyjoe.gestionclasse.databinding.ActivityRoleBinding;
+import com.junnyjoe.gestionclasse.util.Motion;
 import com.junnyjoe.gestionclasse.util.Session;
 
 /** Écran 1 : choix du mode Enseignant ou Étudiant. */
@@ -17,6 +18,9 @@ public class RoleActivity extends AppCompatActivity {
         ActivityRoleBinding b = ActivityRoleBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
         Session session = new Session(this);
+        if (savedInstanceState == null) {
+            Motion.enter(b.ivLogo, b.tvTitle, b.tvSubtitle, b.btnTeacher, b.btnStudent);
+        }
 
         b.btnTeacher.setOnClickListener(v -> {
             session.setTeacher();
