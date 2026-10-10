@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp" android:height="200dp"
+    android:viewportWidth="280" android:viewportHeight="200">
+    <path android:fillColor="@color/container_high"
+        android:pathData="M28,12h224a20,20 0 0 1 20,20v136a20,20 0 0 1 -20,20h-224a20,20 0 0 1 -20,-20v-136a20,20 0 0 1 20,-20z" />
+    <path android:fillColor="@color/espresso"
+        android:pathData="M48,34h132a14,14 0 0 1 14,14v62a14,14 0 0 1 -14,14h-132a14,14 0 0 1 -14,-14v-62a14,14 0 0 1 14,-14z" />
+    <path android:fillColor="@color/accent" android:pathData="M54,52h70v8h-70z" />
+    <path android:fillColor="@color/on_espresso" android:fillAlpha="0.35" android:pathData="M54,70h104v6h-104z" />
+    <path android:fillColor="@color/on_espresso" android:fillAlpha="0.35" android:pathData="M54,84h84v6h-84z" />
+    <path android:fillColor="@color/accent_container"
+        android:pathData="M214,34h22a12,12 0 0 1 12,12v70a12,12 0 0 1 -12,12h-22a12,12 0 0 1 -12,-12v-70a12,12 0 0 1 12,-12z" />
+    <path android:fillColor="@color/accent" android:pathData="M225,62m-9,0a9,9 0 1 1 18,0a9,9 0 1 1 -18,0" />
+    <path android:fillColor="@color/accent" android:pathData="M64,158m-16,0a16,16 0 1 1 32,0a16,16 0 1 1 -32,0" />
+    <path android:fillColor="@color/sand" android:pathData="M112,158m-16,0a16,16 0 1 1 32,0a16,16 0 1 1 -32,0" />
+    <path android:fillColor="@color/espresso" android:pathData="M160,158m-16,0a16,16 0 1 1 32,0a16,16 0 1 1 -32,0" />
+    <path android:fillColor="@color/accent_container" android:pathData="M208,158m-16,0a16,16 0 1 1 32,0a16,16 0 1 1 -32,0" />
+</vector>

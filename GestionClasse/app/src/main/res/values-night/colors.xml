@@ -1,0 +1,20 @@
+<resources>
+    <!-- Palette chaude (sombre) -->
+    <color name="espresso">#F3E5DC</color>
+    <color name="on_espresso">#2A1B15</color>
+    <color name="accent">#F09468</color>
+    <color name="on_accent">#2A1208</color>
+    <color name="accent_container">#5A2D1B</color>
+    <color name="on_accent_container">#FADDD0</color>
+    <color name="sand">#E6BEA0</color>
+    <color name="cream">#151010</color>
+    <color name="ink">#F2E6DF</color>
+    <color name="surface_variant">#3A2E28</color>
+    <color name="on_surface_variant">#D3C3B9</color>
+    <color name="outline">#6F5F56</color>
+    <color name="container_lowest">#100B0A</color>
+    <color name="container_low">#1F1815</color>
+    <color name="container">#251C18</color>
+    <color name="container_high">#2C221D</color>
+    <color name="container_highest">#352A24</color>
+</resources>
