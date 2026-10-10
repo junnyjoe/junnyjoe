@@ -19,7 +19,7 @@ public class RoleActivity extends AppCompatActivity {
         setContentView(b.getRoot());
         Session session = new Session(this);
         if (savedInstanceState == null) {
-            Motion.enter(b.ivLogo, b.tvTitle, b.tvSubtitle, b.btnTeacher, b.btnStudent);
+            Motion.enter(b.ivIllustration, b.tvHeadline, b.tvSubtitle, b.panelRoles);
         }
 
         b.btnTeacher.setOnClickListener(v -> {

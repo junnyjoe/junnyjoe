@@ -1,12 +1,14 @@
 <resources>
     <style name="Theme.GestionClasse" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">@color/terracotta</item>
-        <item name="colorOnPrimary">@color/on_terracotta</item>
-        <item name="colorPrimaryContainer">@color/terracotta_container</item>
-        <item name="colorOnPrimaryContainer">@color/on_terracotta_container</item>
+        <item name="colorPrimary">@color/espresso</item>
+        <item name="colorOnPrimary">@color/on_espresso</item>
+        <item name="colorPrimaryContainer">@color/accent_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_accent_container</item>
         <item name="colorSecondary">@color/sand</item>
-        <item name="colorSecondaryContainer">@color/sand_container</item>
-        <item name="colorOnSecondaryContainer">@color/on_sand_container</item>
+        <item name="colorSecondaryContainer">@color/container_high</item>
+        <item name="colorOnSecondaryContainer">@color/ink</item>
+        <item name="colorTertiary">@color/accent</item>
+        <item name="colorOnTertiary">@color/on_accent</item>
         <item name="android:colorBackground">@color/cream</item>
         <item name="colorSurface">@color/cream</item>
         <item name="colorOnSurface">@color/ink</item>
@@ -34,18 +36,18 @@
 
     <style name="ShapeAppearance.App.Medium" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20dp</item>
+        <item name="cornerSize">24dp</item>
     </style>
     <style name="ShapeAppearance.App.Large" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">28dp</item>
+        <item name="cornerSize">32dp</item>
     </style>
 
     <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
     </style>
 
     <!-- Boutons : léger effet de pression (échelle 0,97) -->

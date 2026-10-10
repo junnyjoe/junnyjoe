@@ -2,10 +2,9 @@ package com.junnyjoe.gestionclasse.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -16,7 +15,11 @@ import com.junnyjoe.gestionclasse.util.Session;
 import com.junnyjoe.gestionclasse.viewmodel.ClasseViewModel;
 import com.junnyjoe.gestionclasse.viewmodel.EtudiantViewModel;
 
-/** Écran 2 : présentation de la classe et accès aux étudiants et aux conversations. */
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+/** Écran 2 : tableau de bord (classe, accès rapide aux étudiants et aux conversations). */
 public class HomeActivity extends AppCompatActivity {
     private Session session;
 
@@ -30,25 +33,39 @@ public class HomeActivity extends AppCompatActivity {
         }
         ActivityHomeBinding b = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
-        setTitle(R.string.app_name);
+        ActionBar bar = getSupportActionBar();
+        if (bar != null) bar.hide(); // l'en-tête est dans la mise en page
 
         boolean teacher = session.isTeacher();
         ClasseViewModel classeVm = new ViewModelProvider(this).get(ClasseViewModel.class);
+        EtudiantViewModel etudiantVm = new ViewModelProvider(this).get(EtudiantViewModel.class);
+        etudiantVm.setQuery("");
+
+        String date = new SimpleDateFormat("EEEE d MMMM", Locale.FRANCE).format(new Date());
+        b.tvDate.setText(date.substring(0, 1).toUpperCase(Locale.FRANCE) + date.substring(1));
 
         if (teacher) {
-            b.tvWelcome.setText(R.string.welcome_teacher);
-            b.btnMessages.setVisibility(View.GONE);
+            b.tvGreeting.setText(R.string.greeting_teacher);
+            b.tvAvatar.setText("E");
+            b.cardMessages.setVisibility(View.GONE);
         } else {
-            EtudiantViewModel etudiantVm = new ViewModelProvider(this).get(EtudiantViewModel.class);
             etudiantVm.getEtudiant(session.getStudentId()).observe(this, e -> {
                 if (e == null) {
                     // Profil supprimé par l'enseignant : retour au choix du mode.
                     goToRole();
                 } else {
-                    b.tvWelcome.setText(getString(R.string.welcome_student, e.getNomComplet()));
+                    b.tvGreeting.setText(getString(R.string.greeting_student, e.prenom));
+                    b.tvAvatar.setText(e.getInitiales());
                 }
             });
         }
+
+        etudiantVm.getEtudiants().observe(this, list -> {
+            int n = list == null ? 0 : list.size();
+            b.tvCount.setText(String.valueOf(n));
+            b.tvCountLabel.setText(getResources().getQuantityString(R.plurals.enrolled_label, n));
+            b.tvStudentsSub.setText(getResources().getQuantityString(R.plurals.students_count, n, n));
+        });
 
         classeVm.getClasse().observe(this, classe -> {
             boolean exists = classe != null;
@@ -63,39 +80,39 @@ public class HomeActivity extends AppCompatActivity {
                 b.tvClasseYear.setText(classe.anneeUniversitaire);
             }
             if (teacher) {
-                b.btnClasse.setText(exists ? R.string.classe_edit : R.string.classe_create);
-                b.btnClasse.setVisibility(View.VISIBLE);
+                b.tvClasseSub.setText(exists ? R.string.sub_edit : R.string.sub_create);
+                b.cardClasseAction.setVisibility(View.VISIBLE);
             } else {
-                b.btnClasse.setText(R.string.classe_view);
-                b.btnClasse.setVisibility(exists ? View.VISIBLE : View.GONE);
+                b.tvClasseSub.setText(R.string.sub_view);
+                b.cardClasseAction.setVisibility(exists ? View.VISIBLE : View.GONE);
             }
         });
 
         if (savedInstanceState == null) {
-            Motion.enter(b.tvWelcome, b.btnClasse, b.btnStudents, b.btnMessages);
+            Motion.enter(b.llHeader, b.tvQuick, b.cardStudents, b.cardMessages, b.cardClasseAction);
+            Motion.pop(b.btnFab);
         }
 
-        b.btnClasse.setOnClickListener(v -> startActivity(new Intent(this, ClasseActivity.class)));
-        b.btnStudents.setOnClickListener(v -> startActivity(
-                EtudiantListActivity.intent(this, EtudiantListActivity.MODE_BROWSE, Session.NO_STUDENT)));
-        b.btnMessages.setOnClickListener(v -> startActivity(
-                EtudiantListActivity.intent(this, EtudiantListActivity.MODE_PICK_RECIPIENT,
-                        session.getStudentId())));
+        View.OnClickListener openStudents = v -> startActivity(
+                EtudiantListActivity.intent(this, EtudiantListActivity.MODE_BROWSE, Session.NO_STUDENT));
+        b.cardStudents.setOnClickListener(openStudents);
+        b.navStudents.setOnClickListener(openStudents);
+        b.cardClasseAction.setOnClickListener(v -> startActivity(new Intent(this, ClasseActivity.class)));
+        b.cardMessages.setOnClickListener(v -> openRecipientPicker());
+        b.ibMode.setOnClickListener(v -> goToRole());
+        // Bouton central : ajouter un étudiant (enseignant) ou écrire un message (étudiant).
+        b.btnFab.setOnClickListener(v -> {
+            if (teacher) {
+                startActivity(new Intent(this, EtudiantFormActivity.class));
+            } else {
+                openRecipientPicker();
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_change_mode) {
-            goToRole();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    private void openRecipientPicker() {
+        startActivity(EtudiantListActivity.intent(this, EtudiantListActivity.MODE_PICK_RECIPIENT,
+                session.getStudentId()));
     }
 
     private void goToRole() {

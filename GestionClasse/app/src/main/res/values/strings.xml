@@ -19,7 +19,28 @@
     <string name="pick_recipient_title">Choisir un destinataire</string>
     <string name="empty_students_pick">Aucun étudiant n\'est enregistré. L\'enseignant doit d\'abord ajouter les étudiants de la classe.</string>
 
+    <string name="role_headline">Gérez votre classe, simplement.</string>
+    <string name="role_panel_hint">Choisissez votre mode</string>
+    <string name="role_teacher_short">Enseignant</string>
+    <string name="role_teacher_sub">Créer et gérer</string>
+    <string name="role_student_short">Étudiant</string>
+    <string name="role_student_sub">Consulter et échanger</string>
+
     <!-- Accueil / classe -->
+    <string name="greeting_teacher">Bonjour, enseignant</string>
+    <string name="greeting_student">Bonjour, %1$s</string>
+    <string name="quick_access">Accès rapide</string>
+    <string name="nav_home">Accueil</string>
+    <string name="conversations">Conversations</string>
+    <string name="sub_view">Consulter</string>
+    <string name="sub_edit">Modifier</string>
+    <string name="sub_create">Créer</string>
+    <string name="class_label">Ma classe</string>
+    <string name="change_mode_desc">Changer de mode</string>
+    <plurals name="enrolled_label">
+        <item quantity="one">étudiant inscrit</item>
+        <item quantity="other">étudiants inscrits</item>
+    </plurals>
     <string name="welcome_teacher">Connecté en tant qu\'enseignant</string>
     <string name="welcome_student">Connecté en tant que %1$s</string>
     <string name="no_classe_teacher">Aucune classe n\'est enregistrée. Créez-la pour commencer.</string>

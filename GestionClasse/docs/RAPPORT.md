@@ -22,8 +22,9 @@
 
 ### Style visuel et animations
 
-- Palette **terracotta** (primaire `#C65D3B`, fond crème, accents sable) avec variante sombre, définie dans `values/colors.xml` et `values-night/colors.xml`.
-- Formes arrondies (cartes 20–28 dp, champs 16 dp, bulles 22 dp), carte de classe en dégradé chaleureux.
+- Design inspiré d'une application « smart home » : fonds clairs, cartes très arrondies (24–32 dp), titres gras, carte « active » sombre, bouton central rond dans une barre de navigation basse.
+- Palette chaude : espresso `#2A1B15` (éléments actifs, bulles envoyées, boutons), accent terracotta `#D2693F` (chiffres clés, icônes), fonds crème/grège. Variante sombre dans `values-night/colors.xml`.
+- Écran d'accueil en tableau de bord : en-tête (avatar, salutation, date), carte de la classe avec le nombre d'étudiants, grille « Accès rapide ».
 - Transitions entre écrans (glissement + fondu, 240–300 ms), entrée étagée des éléments et des premières lignes de liste (`Motion.java`), léger effet de pression (échelle 0,97) sur les boutons.
 - Animations courtes et jamais répétées à chaque défilement ; les durées suivent le réglage système d'animation.
 

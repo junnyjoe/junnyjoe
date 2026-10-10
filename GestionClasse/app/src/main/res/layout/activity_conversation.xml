@@ -98,11 +98,13 @@
 
         <ImageButton
             android:id="@+id/btnSend"
-            android:layout_width="48dp"
-            android:layout_height="56dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_circle_primary"
             android:contentDescription="@string/send"
+            android:padding="14dp"
             android:src="@drawable/ic_send"
-            app:tint="?attr/colorPrimary" />
+            app:tint="?attr/colorOnPrimary" />
     </LinearLayout>
 </LinearLayout>

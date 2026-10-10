@@ -1,23 +1,20 @@
 <resources>
-    <!-- Palette terracotta (clair) -->
-    <color name="terracotta">#C65D3B</color>
-    <color name="on_terracotta">#FFFFFF</color>
-    <color name="terracotta_container">#FFDBCE</color>
-    <color name="on_terracotta_container">#3A0B00</color>
+    <!-- Palette chaude : espresso + accent terracotta (clair) -->
+    <color name="espresso">#2A1B15</color>
+    <color name="on_espresso">#FFFFFF</color>
+    <color name="accent">#D2693F</color>
+    <color name="on_accent">#FFFFFF</color>
+    <color name="accent_container">#F9DDD0</color>
+    <color name="on_accent_container">#4A1A08</color>
     <color name="sand">#8C5A3C</color>
-    <color name="sand_container">#F9E0CC</color>
-    <color name="on_sand_container">#2F1500</color>
-    <color name="cream">#FFF8F4</color>
-    <color name="ink">#2A1B16</color>
-    <color name="surface_variant">#F4E2D8</color>
-    <color name="on_surface_variant">#55443C</color>
-    <color name="outline">#85736A</color>
+    <color name="cream">#F8F5F2</color>
+    <color name="ink">#1F1612</color>
+    <color name="surface_variant">#ECE5DF</color>
+    <color name="on_surface_variant">#5A4D46</color>
+    <color name="outline">#B9ABA2</color>
     <color name="container_lowest">#FFFFFF</color>
-    <color name="container_low">#FFF1EA</color>
-    <color name="container">#FBEAE0</color>
-    <color name="container_high">#F5E3D8</color>
-    <color name="container_highest">#EFDDD1</color>
-    <color name="hero_start">#C65D3B</color>
-    <color name="hero_end">#E8935F</color>
-    <color name="on_hero">#FFFFFF</color>
+    <color name="container_low">#F4F0EC</color>
+    <color name="container">#EFEAE5</color>
+    <color name="container_high">#E9E3DD</color>
+    <color name="container_highest">#E3DCD5</color>
 </resources>
